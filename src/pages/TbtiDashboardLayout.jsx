@@ -41,22 +41,14 @@ const TbtiDashboardLayout = () => {
           <span className="h-2 w-2 rounded-full bg-purple-500" />
           <span className="heading-font text-lg font-bold">TBTI Portal</span>
         </Link>
-        <div className="flex items-center gap-3">
-          {role === 'admin' && (
-            <Link
-              to="/admin"
-              className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:underline"
-            >
-              Admin
-            </Link>
-          )}
+        {role === 'admin' && (
           <Link
-            to="/"
-            className="text-sm font-medium text-gray-600 hover:text-purple-700 hover:underline"
+            to="/admin"
+            className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:underline"
           >
-            Church site
+            Admin
           </Link>
-        </div>
+        )}
       </header>
 
       <div className="flex">

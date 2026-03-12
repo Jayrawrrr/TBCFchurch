@@ -18,7 +18,7 @@ const AdminProtectedRoute = ({ children }) => {
     return <Navigate to="/tbti/login" state={{ from: location }} replace />
   }
 
-  if (role !== 'admin') {
+  if (role !== 'admin' && role !== 'superadmin') {
     return <Navigate to="/tbti/dashboard" replace />
   }
 

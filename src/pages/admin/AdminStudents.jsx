@@ -4,7 +4,7 @@ import { db } from '../../firebase'
 import { useAuth } from '../../contexts/AuthContext'
 
 const AdminStudents = () => {
-  const { user } = useAuth()
+  const { user, role: currentRole } = useAuth()
   const [students, setStudents] = useState([])
   const [loading, setLoading] = useState(true)
   const [updatingId, setUpdatingId] = useState(null)
@@ -31,6 +31,7 @@ const AdminStudents = () => {
 
   const toggleEnrollment = async (student) => {
     if (!db) return
+    if (student.role === 'admin' || student.role === 'superadmin') return
     setUpdatingId(student.id)
     try {
       await updateDoc(doc(db, 'users', student.id), {
@@ -46,7 +47,15 @@ const AdminStudents = () => {
   const toggleRole = async (student) => {
     if (!db || !user) return
     if (student.id === user.uid) {
-      // prevent demoting yourself
+      // never change your own role from here
+      return
+    }
+    if (student.role === 'superadmin') {
+      // superadmin role is managed directly in Firestore
+      return
+    }
+    if (currentRole !== 'superadmin') {
+      // only superadmin can change roles
       return
     }
     const nextRole = student.role === 'admin' ? 'student' : 'admin'
@@ -94,7 +103,9 @@ const AdminStudents = () => {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {students.map((s) => {
-                const isCurrentAdmin = user && s.id === user.uid
+                const isCurrentUser = user && s.id === user.uid
+                const isAdminRole = s.role === 'admin' || s.role === 'superadmin'
+                const effectiveEnrolled = isAdminRole ? true : !!s.isEnrolled
                 return (
                   <tr key={s.id}>
                     <td className="px-4 py-3 text-gray-900">
@@ -104,47 +115,53 @@ const AdminStudents = () => {
                     <td className="px-4 py-3">
                       <span
                         className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${
-                          s.isEnrolled
+                          effectiveEnrolled
                             ? 'bg-emerald-50 text-emerald-700'
                             : 'bg-gray-50 text-gray-500'
                         }`}
                       >
-                        {s.isEnrolled ? 'Enrolled' : 'Not enrolled'}
+                        {effectiveEnrolled ? 'Enrolled' : 'Not enrolled'}
                       </span>
                     </td>
                     <td className="px-4 py-3">
                       <span
                         className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${
-                          s.role === 'admin'
+                          s.role === 'admin' || s.role === 'superadmin'
                             ? 'bg-amber-50 text-amber-700'
                             : 'bg-indigo-50 text-indigo-700'
                         }`}
                       >
-                        {isCurrentAdmin ? 'You (admin)' : s.role === 'admin' ? 'Admin' : 'Student'}
+                        {s.role === 'superadmin'
+                          ? 'Superadmin'
+                          : isCurrentUser && (currentRole === 'admin' || currentRole === 'superadmin')
+                          ? 'You (admin)'
+                          : s.role === 'admin'
+                          ? 'Admin'
+                          : 'Student'}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-2">
-                        <button
-                          type="button"
-                          onClick={() => toggleEnrollment(s)}
-                          disabled={updatingId === s.id}
-                          className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
-                        >
-                          {s.isEnrolled ? 'Unenroll' : 'Enroll'}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => toggleRole(s)}
-                          disabled={updatingId === s.id || isCurrentAdmin}
-                          className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
-                        >
-                          {isCurrentAdmin
-                            ? 'You'
-                            : s.role === 'admin'
-                            ? 'Make student'
-                            : 'Make admin'}
-                        </button>
+                        {!isAdminRole && (
+                          <button
+                            type="button"
+                            onClick={() => toggleEnrollment(s)}
+                            disabled={updatingId === s.id}
+                            className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
+                          >
+                            {s.isEnrolled ? 'Unenroll' : 'Enroll'}
+                          </button>
+                        )}
+                        {currentRole === 'superadmin' && !isCurrentUser && s.role !== 'superadmin' && (
+                          <button
+                            type="button"
+                            onClick={() => toggleRole(s)}
+                            disabled={updatingId === s.id}
+                            className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+                          >
+                            {s.role === 'admin' ? 'Remove admin' : 'Make admin'}
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>

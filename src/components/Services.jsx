@@ -1,9 +1,55 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { doc, onSnapshot } from 'firebase/firestore'
+import { db } from '../firebase'
 
 const Services = () => {
   const timelineRefs = useRef([])
+  const [services, setServices] = useState([
+    {
+      title: 'Sunday Morning',
+      description: 'Traditional worship service with hymns and message',
+      time: '9:00 AM - 10:30 AM',
+      location: 'Main Sanctuary',
+      day: 'Sunday',
+      color: 'purple',
+    },
+    {
+      title: 'Sunday Evening',
+      description: 'Contemporary worship with modern music and teaching',
+      time: '6:00 PM - 7:30 PM',
+      location: 'Main Sanctuary',
+      day: 'Sunday',
+      color: 'indigo',
+    },
+    {
+      title: 'Wednesday Prayer',
+      description: 'Mid-week prayer meeting and Bible study',
+      time: '7:00 PM - 8:30 PM',
+      location: 'Fellowship Hall',
+      day: 'Wednesday',
+      color: 'blue',
+    },
+  ])
 
   useEffect(() => {
+    let unsubscribeContent = null
+    if (db) {
+      const ref = doc(db, 'siteContent', 'services')
+      unsubscribeContent = onSnapshot(
+        ref,
+        (snap) => {
+          if (!snap.exists()) return
+          const data = snap.data()
+          if (Array.isArray(data.items) && data.items.length) {
+            setServices(data.items)
+          }
+        },
+        () => {
+          // fall back to defaults on error
+        }
+      )
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -32,38 +78,9 @@ const Services = () => {
       timelineRefs.current.forEach((ref) => {
         if (ref) observer.unobserve(ref)
       })
+      if (unsubscribeContent) unsubscribeContent()
     }
   }, [])
-
-  const services = [
-    {
-      icon: 'fa-sun',
-      title: 'Sunday Morning',
-      description: 'Traditional worship service with hymns and message',
-      time: '9:00 AM - 10:30 AM',
-      location: 'Main Sanctuary',
-      day: 'Sunday',
-      color: 'purple'
-    },
-    {
-      icon: 'fa-music',
-      title: 'Sunday Evening',
-      description: 'Contemporary worship with modern music and teaching',
-      time: '6:00 PM - 7:30 PM',
-      location: 'Main Sanctuary',
-      day: 'Sunday',
-      color: 'indigo'
-    },
-    {
-      icon: 'fa-pray',
-      title: 'Wednesday Prayer',
-      description: 'Mid-week prayer meeting and Bible study',
-      time: '7:00 PM - 8:30 PM',
-      location: 'Fellowship Hall',
-      day: 'Wednesday',
-      color: 'blue'
-    }
-  ]
 
   const getColorClasses = (color) => {
     const colors = {
@@ -140,15 +157,9 @@ const Services = () => {
                         {service.day}
                       </div>
 
-                      {/* Icon and Title */}
-                      <div className="flex items-center space-x-4 mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
-                          <i className={`fas ${service.icon} text-xl`}></i>
-                        </div>
-                        <h3 className="heading-font text-xl font-bold text-gray-900">
-                          {service.title}
-                        </h3>
-                      </div>
+                      <h3 className="heading-font mb-4 text-xl font-bold text-gray-900">
+                        {service.title}
+                      </h3>
 
                       {/* Description */}
                       <p className="text-sm text-gray-600 mb-4 leading-relaxed">

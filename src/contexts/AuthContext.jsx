@@ -40,8 +40,12 @@ export const AuthProvider = ({ children }) => {
             return
           }
           const d = snap.data()
-          setIsEnrolled(!!d.isEnrolled)
-          setRole(d.role === 'admin' ? 'admin' : 'student')
+          const docRole =
+            d.role === 'admin' || d.role === 'superadmin' ? d.role : 'student'
+          setRole(docRole)
+          const enrolledFromRole =
+            docRole === 'admin' || docRole === 'superadmin'
+          setIsEnrolled(enrolledFromRole || !!d.isEnrolled)
         })
         .catch(() => {
           setIsEnrolled(false)

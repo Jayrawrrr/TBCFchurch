@@ -11,6 +11,8 @@ const AdminLayout = () => {
     { to: '/admin', label: 'Admin Home', icon: 'fa-home' },
     { to: '/admin/students', label: 'Students', icon: 'fa-users' },
     { to: '/admin/lessons', label: 'Lessons', icon: 'fa-book-open' },
+    { to: '/admin/site-services', label: 'Site · Services', icon: 'fa-clock' },
+    { to: '/admin/site-events', label: 'Site · Events', icon: 'fa-calendar' },
   ]
 
   const handleSignOut = () => {
@@ -34,7 +36,10 @@ const AdminLayout = () => {
           <span className="heading-font text-lg font-bold">TBTI Admin</span>
         </Link>
         <div className="flex items-center gap-3">
-          <Link to="/tbti/dashboard" className="text-sm font-medium text-gray-600 hover:text-purple-700 hover:underline">
+          <Link
+            to="/tbti/dashboard"
+            className="text-sm font-medium text-gray-600 hover:text-purple-700 hover:underline"
+          >
             Student portal
           </Link>
           <button

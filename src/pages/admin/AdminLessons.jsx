@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore'
-import { db } from '../../firebase'
+import { db, storage } from '../../firebase'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 const AdminLessons = () => {
   const [lessons, setLessons] = useState([])
   const [loading, setLoading] = useState(true)
   const [editing, setEditing] = useState(null)
+  const [uploadingPdf, setUploadingPdf] = useState(false)
+  const fileInputRef = useRef(null)
   const [form, setForm] = useState({
     title: '',
     year: 1,
@@ -75,6 +78,30 @@ const AdminLessons = () => {
       loadAllLessons()
     } catch (err) {
       console.error(err)
+    }
+  }
+
+  const handlePdfFileChange = async (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    if (!storage) {
+      alert('File uploads are not available because Firebase storage is not configured.')
+      return
+    }
+    setUploadingPdf(true)
+    try {
+      const fileRef = ref(storage, `lessons/${Date.now()}_${file.name}`)
+      await uploadBytes(fileRef, file)
+      const url = await getDownloadURL(fileRef)
+      setForm((f) => ({ ...f, pdfUrl: url }))
+    } catch (err) {
+      console.error(err)
+      alert('Failed to upload PDF. Please try again.')
+    } finally {
+      setUploadingPdf(false)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
     }
   }
 
@@ -157,14 +184,34 @@ const AdminLessons = () => {
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-700">PDF URL</label>
+            <label className="mb-1 block text-sm font-medium text-gray-700">PDF</label>
             <input
               type="url"
               value={form.pdfUrl}
               onChange={(e) => setForm((f) => ({ ...f, pdfUrl: e.target.value }))}
               className="w-full rounded-xl border border-gray-300 px-4 py-2 text-sm focus:ring-2 focus:ring-amber-500"
-              placeholder="https://..."
+              placeholder="Paste PDF URL or upload below"
             />
+            <div className="mt-2 flex items-center gap-3">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="application/pdf"
+                className="hidden"
+                onChange={handlePdfFileChange}
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploadingPdf}
+                className="rounded-xl border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-60"
+              >
+                {uploadingPdf ? 'Uploading…' : 'Upload PDF'}
+              </button>
+              {form.pdfUrl && (
+                <span className="text-xs text-emerald-600">PDF attached</span>
+              )}
+            </div>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">YouTube URL</label>

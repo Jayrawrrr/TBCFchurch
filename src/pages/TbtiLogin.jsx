@@ -28,6 +28,29 @@ const TbtiLogin = () => {
     }
   }
 
+  const redirectAfterLogin = async (user) => {
+    if (!db || !user) {
+      navigate(location.state?.from?.pathname || '/tbti/dashboard', { replace: true })
+      return
+    }
+    try {
+      const ref = doc(db, 'users', user.uid)
+      const snap = await getDoc(ref)
+      const data = snap.exists() ? snap.data() : null
+      const role =
+        data?.role === 'admin' || data?.role === 'superadmin'
+          ? data.role
+          : 'student'
+      if (role === 'admin' || role === 'superadmin') {
+        navigate('/admin', { replace: true })
+      } else {
+        navigate(location.state?.from?.pathname || '/tbti/dashboard', { replace: true })
+      }
+    } catch {
+      navigate(location.state?.from?.pathname || '/tbti/dashboard', { replace: true })
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -41,8 +64,8 @@ const TbtiLogin = () => {
     }
     setBusy(true)
     try {
-      await signInWithEmailAndPassword(auth, email, password)
-      navigate(location.state?.from?.pathname || '/tbti/dashboard', { replace: true })
+      const cred = await signInWithEmailAndPassword(auth, email, password)
+      await redirectAfterLogin(cred.user)
     } catch (err) {
       setError(err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found'
         ? 'Invalid email or password.'
@@ -62,7 +85,7 @@ const TbtiLogin = () => {
     try {
       const { user } = await signInWithPopup(auth, googleProvider)
       await ensureUserDoc(user)
-      navigate(location.state?.from?.pathname || '/tbti/dashboard', { replace: true })
+      await redirectAfterLogin(user)
     } catch (err) {
       if (err.code === 'auth/popup-closed-by-user') return
       setError(err.message || 'Google sign-in failed.')

@@ -18,6 +18,8 @@ import AdminLayout from './pages/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminStudents from './pages/admin/AdminStudents'
 import AdminLessons from './pages/admin/AdminLessons'
+import AdminSiteServices from './pages/admin/AdminSiteServices'
+import AdminSiteEvents from './pages/admin/AdminSiteEvents'
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route index element={<AdminDashboard />} />
         <Route path="students" element={<AdminStudents />} />
         <Route path="lessons" element={<AdminLessons />} />
+        <Route path="site-services" element={<AdminSiteServices />} />
+        <Route path="site-events" element={<AdminSiteEvents />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
