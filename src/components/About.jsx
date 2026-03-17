@@ -42,46 +42,22 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
-                Our Approach
+               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
+                Who We Are 
               </p>
               <h3 className="heading-font mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-                Growing Together in Faith
+              A New Covenant Church 
               </h3>
               <p className="mt-2 text-sm text-gray-600 mb-8 leading-relaxed">
-                We believe in the power of prayer, the importance of authentic fellowship, and the
-                transformative work of the Holy Spirit. Whether you're exploring faith for the first
-                time or have been walking with Christ for years, you'll find a place to belong here.
+              We believe that the members of the New Covenant church are those who have been accepted by God through the gift of His Spirit. We are the representation of Jesus Christ—His body—called to continue the life and work He commissioned us to do. We are deeply connected to one another through the unity wrought by the Holy Spirit and the knowledge of His Word. Together, we are predestined to grow into Christlikeness by understanding and living out the commands of Jesus, breaking bread, worshiping, praying, and serving God and one another through the Holy Spirit’s gifts in each individual. (Acts 2:1-4, 38-47; 15:7-9; Eph. 1:13-14; 1 Cor. 12:27; Eph. 4:6-15) 
               </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <i className="fas fa-check text-purple-600"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Welcoming Community</h4>
-                    <p className="text-sm text-gray-600">A place where everyone is valued and included</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <i className="fas fa-check text-purple-600"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Biblical Teaching</h4>
-                    <p className="text-sm text-gray-600">Rooted in Scripture and relevant to daily life</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <i className="fas fa-check text-purple-600"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Serving Others</h4>
-                    <p className="text-sm text-gray-600">Actively reaching out to our community and beyond</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
+                Our Approach 
+              </p>
+              <p className="mt-2 text-sm text-gray-600 mb-8 leading-relaxed">
+              Our mission is to glorify God by proclaiming the Gospel of Jesus Christ, making disciples and molding them in the image of Christ, equipping believers for ministry, and serving our community with the love and truth of Christ. 
+              </p>
+             
             </div>
 
             <div className="space-y-6">
@@ -89,15 +65,11 @@ const About = () => {
                 ref={(el) => cardsRef.current[0] = el}
                 className="rounded-xl border border-gray-100 bg-white p-8 shadow-md"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
-                    <i className="fas fa-hands-helping text-xl"></i>
-                  </div>
+                <div className="flex items-center space-x-4">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Compassionate Service</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Pursuing Christlikeness</h4>
                     <p className="text-sm text-gray-600">
-                      We seek to serve others with humility and love, following the example of
-                      Christ who came not to be served but to serve.
+                    We believe that everyone who is truly born again is a new creation in Christ. Through the power of the Holy Spirit, the regenerated believer is empowered to grow in the image and likeness of Jesus. We imitate His life by knowing and living out His commands, embracing a new life separated from worldly and sinful practices, pleasures, and compromise. 
                     </p>
                   </div>
                 </div>
@@ -106,15 +78,11 @@ const About = () => {
                 ref={(el) => cardsRef.current[1] = el}
                 className="rounded-xl border border-gray-100 bg-white p-8 shadow-md"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
-                    <i className="fas fa-seedling text-xl"></i>
-                  </div>
+                <div className="flex items-center space-x-4">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Spiritual Growth</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Learning the Bible</h4>
                     <p className="text-sm text-gray-600">
-                      We are committed to helping each person grow deeper in their relationship with
-                      God through prayer, study, and community.
+                    We prioritize the deep knowledge and understanding of God's Word. Scripture is the foundation of our unity and our ultimate guide for knowing how to faithfully live out the commands of Jesus Christ every single day. 
                     </p>
                   </div>
                 </div>
@@ -123,15 +91,11 @@ const About = () => {
                 ref={(el) => cardsRef.current[2] = el}
                 className="rounded-xl border border-gray-100 bg-white p-8 shadow-md"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
-                    <i className="fas fa-globe-americas text-xl"></i>
-                  </div>
+                <div className="flex items-center space-x-4">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Global Mission</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Living the Commission</h4>
                     <p className="text-sm text-gray-600">
-                      We support and participate in sharing the Gospel locally and globally, making
-                      disciples of all nations as Jesus commanded.
+                    As the earthly representation and substitute of Jesus Christ, we are dedicated to continuing the work He commissioned us to do. We are committed to sharing the truth of the New Covenant and inviting others to experience new life in Him. 
                     </p>
                   </div>
                 </div>

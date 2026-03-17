@@ -38,10 +38,10 @@ const TbtiDashboardLayout = () => {
           to="/tbti/dashboard"
           className="flex items-center gap-2 text-gray-900"
         >
-          <span className="h-2 w-2 rounded-full bg-purple-500" />
+          <span className="h-2 w-2 rounded-full bg-[#451515]" />
           <span className="heading-font text-lg font-bold">TBTI Portal</span>
         </Link>
-        {role === 'admin' && (
+        {(role === 'admin' || role === 'superadmin') && (
           <Link
             to="/admin"
             className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:underline"
@@ -76,7 +76,7 @@ const TbtiDashboardLayout = () => {
                       }`
                     }
                     return `${base} ${
-                      isActive ? 'bg-purple-50 text-purple-700' : 'text-gray-700 hover:bg-gray-100'
+                      isActive ? 'bg-[#F6F4E8] text-[#451515]' : 'text-gray-700 hover:bg-gray-100'
                     }`
                   }}
                 >

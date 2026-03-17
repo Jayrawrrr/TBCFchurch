@@ -4,7 +4,7 @@ A modern, aesthetic Christian church website for True Bread Christian Fellowship
 
 ## Features
 
-- ✨ Modern, clean design with purple/indigo color scheme
+- ✨ Modern, clean design (TBCF: navy/gold/teal; TBTI: maroon/antique gold)
 - 📱 Fully responsive (mobile, tablet, desktop)
 - ⚡ Fast and optimized with Vite
 - 🎨 Beautiful animations and transitions

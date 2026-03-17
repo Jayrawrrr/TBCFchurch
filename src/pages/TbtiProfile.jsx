@@ -61,7 +61,7 @@ const TbtiProfile = () => {
   return (
     <div className="max-w-2xl space-y-8">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
           Account
         </p>
         <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">
@@ -84,7 +84,7 @@ const TbtiProfile = () => {
           </button>
         </div>
 
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#F6F4E8] px-3 py-1 text-xs font-semibold">
           <span
             className={`h-2 w-2 rounded-full ${
               isEnrolled ? 'bg-green-500' : 'bg-gray-400'
@@ -104,7 +104,7 @@ const TbtiProfile = () => {
               value={profile.name}
               onChange={handleChange}
               disabled={!isEditing}
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 disabled:bg-gray-50 disabled:text-gray-600"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515] disabled:bg-gray-50 disabled:text-gray-600"
             />
           </div>
           <div>
@@ -115,7 +115,7 @@ const TbtiProfile = () => {
               value={profile.email}
               onChange={handleChange}
               disabled={!isEditing}
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 disabled:bg-gray-50 disabled:text-gray-600"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515] disabled:bg-gray-50 disabled:text-gray-600"
             />
           </div>
           <div>
@@ -127,7 +127,7 @@ const TbtiProfile = () => {
               onChange={handleChange}
               disabled={!isEditing}
               placeholder="Your phone number"
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 disabled:bg-gray-50 disabled:text-gray-600"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515] disabled:bg-gray-50 disabled:text-gray-600"
             />
           </div>
           <div>
@@ -175,22 +175,22 @@ const TbtiProfile = () => {
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick links</h2>
         <ul className="space-y-2 text-sm">
           <li>
-            <Link to="/tbti/dashboard/what-is-tbti" className="font-semibold text-purple-700 hover:underline">
+            <Link to="/tbti/dashboard/what-is-tbti" className="font-semibold text-[#451515] hover:underline">
               What is TBTI
             </Link>
           </li>
           <li>
-            <Link to="/tbti/dashboard/school-program" className="font-semibold text-purple-700 hover:underline">
+            <Link to="/tbti/dashboard/school-program" className="font-semibold text-[#451515] hover:underline">
               School Program &amp; Curriculum
             </Link>
           </li>
           <li>
-            <Link to="/tbti/dashboard/admission" className="font-semibold text-purple-700 hover:underline">
+            <Link to="/tbti/dashboard/admission" className="font-semibold text-[#451515] hover:underline">
               Registration &amp; Admission
             </Link>
           </li>
           <li>
-            <Link to="/tbti/dashboard/discipline" className="font-semibold text-purple-700 hover:underline">
+            <Link to="/tbti/dashboard/discipline" className="font-semibold text-[#451515] hover:underline">
               School Discipline &amp; Grading
             </Link>
           </li>

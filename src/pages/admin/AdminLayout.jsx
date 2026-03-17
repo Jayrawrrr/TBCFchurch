@@ -38,7 +38,7 @@ const AdminLayout = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/tbti/dashboard"
-            className="text-sm font-medium text-gray-600 hover:text-purple-700 hover:underline"
+            className="text-sm font-medium text-gray-600 hover:text-[#451515] hover:underline"
           >
             Student portal
           </Link>

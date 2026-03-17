@@ -1,4 +1,5 @@
 import React from 'react'
+import tbcfLogo from '../image/tbcf.png'
 
 const Footer = () => {
   const handleNavClick = (e, targetId) => {
@@ -18,8 +19,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-2 w-2 rounded-full bg-purple-400" />
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={tbcfLogo}
+                alt="True Bread Christian Fellowship logo"
+                className="h-10 w-10 rounded-full bg-white object-contain"
+              />
               <span className="heading-font text-lg font-bold">
                 True Bread Christian Fellowship
               </span>
@@ -30,30 +35,30 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400 mb-4">Quick Links</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15] mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-purple-200 hover:text-white hover:underline transition-colors">
+                <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-purple-200 hover:text-white hover:underline transition-colors">
+                <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-purple-200 hover:text-white hover:underline transition-colors">
+                <a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#bible-school" onClick={(e) => handleNavClick(e, '#bible-school')} className="text-purple-200 hover:text-white hover:underline transition-colors">
+                <a href="#bible-school" onClick={(e) => handleNavClick(e, '#bible-school')} className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">
                   Bible School
                 </a>
               </li>
               <li>
-                <a href="#events" onClick={(e) => handleNavClick(e, '#events')} className="text-purple-200 hover:text-white hover:underline transition-colors">
+                <a href="#events" onClick={(e) => handleNavClick(e, '#events')} className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">
                   Events
                 </a>
               </li>
@@ -61,22 +66,22 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400 mb-4">Ministries</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15] mb-4">Ministries</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Youth</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Children</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Women</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Men</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Youth</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Children</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Women</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Men</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400 mb-4">Resources</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15] mb-4">Resources</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Sermons</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Bible Study</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Prayer Requests</a></li>
-              <li><a href="#" className="text-purple-200 hover:text-white hover:underline transition-colors">Give Online</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Sermons</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Bible Study</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Prayer Requests</a></li>
+              <li><a href="#" className="text-[#E2D6A5] hover:text-white hover:underline transition-colors">Give Online</a></li>
             </ul>
           </div>
         </div>

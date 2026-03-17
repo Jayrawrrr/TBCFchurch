@@ -4,7 +4,7 @@ const TbtiDiscipline = () => {
   return (
     <div className="max-w-3xl space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
           Section 4
         </p>
         <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">

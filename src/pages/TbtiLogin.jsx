@@ -139,7 +139,7 @@ const TbtiLogin = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="you@example.com"
           />
         </div>
@@ -152,17 +152,17 @@ const TbtiLogin = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="••••••••"
           />
         </div>
 
         <div className="flex items-center justify-between">
           <label className="inline-flex items-center gap-2 text-sm text-gray-600">
-            <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-600" />
+            <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-[#451515] focus:ring-[#451515]" />
             Remember me
           </label>
-          <Link to="/tbti/forgot" className="text-sm font-semibold text-purple-700 hover:underline">
+          <Link to="/tbti/forgot" className="text-sm font-semibold text-[#451515] hover:underline">
             Forgot password?
           </Link>
         </div>
@@ -177,7 +177,7 @@ const TbtiLogin = () => {
 
         <p className="pt-2 text-center text-sm text-gray-600">
           Don&apos;t have an account?{' '}
-          <Link to="/tbti/signup" className="font-semibold text-purple-700 hover:underline">
+          <Link to="/tbti/signup" className="font-semibold text-[#451515] hover:underline">
             Sign up
           </Link>
         </p>

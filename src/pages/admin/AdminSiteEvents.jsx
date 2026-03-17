@@ -133,7 +133,7 @@ const AdminSiteEvents = () => {
                 className="text-left rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
               >
                 <div className="mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
                     {item.date || 'Date'}
                   </p>
                   <h3 className="heading-font mt-2 text-xl font-bold text-gray-900">
@@ -143,7 +143,7 @@ const AdminSiteEvents = () => {
                 <p className="text-sm text-gray-600 mb-4 line-clamp-3">
                   {item.description || 'Add a description'}
                 </p>
-                <span className="text-xs font-semibold text-purple-700">
+                <span className="text-xs font-semibold text-[#29226D]">
                   Click to edit →
                 </span>
               </button>

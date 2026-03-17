@@ -11,7 +11,7 @@ const Services = () => {
       time: '9:00 AM - 10:30 AM',
       location: 'Main Sanctuary',
       day: 'Sunday',
-      color: 'purple',
+      color: 'gold',
     },
     {
       title: 'Sunday Evening',
@@ -84,11 +84,11 @@ const Services = () => {
 
   const getColorClasses = (color) => {
     const colors = {
-      purple: {
-        bg: 'bg-purple-600',
-        text: 'text-purple-600',
-        light: 'bg-purple-50',
-        border: 'border-purple-600'
+      gold: {
+        bg: 'bg-[#D4AA15]',
+        text: 'text-[#D4AA15]',
+        light: 'bg-[#F6F4E8]',
+        border: 'border-[#D4AA15]'
       },
       indigo: {
         bg: 'bg-indigo-600',
@@ -103,14 +103,14 @@ const Services = () => {
         border: 'border-blue-600'
       }
     }
-    return colors[color] || colors.purple
+    return colors[color] || colors.gold
   }
 
   return (
     <section id="services" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
             Service Times
           </p>
           <h2 className="heading-font mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -124,7 +124,7 @@ const Services = () => {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-purple-400 to-purple-200 transform md:-translate-x-1/2"></div>
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#F6F4E8] via-[#D4AA15]/30 to-[#F6F4E8] transform md:-translate-x-1/2"></div>
 
           {/* Timeline Items */}
           <div className="space-y-12">

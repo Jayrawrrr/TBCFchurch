@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import tbtiLogo from '../image/tbti.png'
 
 const TbtiAuthLayout = ({ title, subtitle, children }) => {
   return (
@@ -14,15 +15,15 @@ const TbtiAuthLayout = ({ title, subtitle, children }) => {
               backgroundImage: "url('/tbti-auth.jpg')",
             }}
           />
-          {/* Gradient with violet specks effect */}
+          {/* Gradient overlay – TBTI maroon & antique gold */}
           <div 
             className="absolute inset-0"
             style={{
               background: `
-                radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 60% 20%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 30%, rgba(69, 21, 21, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(184, 149, 88, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(69, 21, 21, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 60% 20%, rgba(184, 149, 88, 0.2) 0%, transparent 50%),
                 linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6))
               `
             }}
@@ -30,12 +31,8 @@ const TbtiAuthLayout = ({ title, subtitle, children }) => {
 
           <div className="relative z-10 flex h-full flex-col justify-between p-12 text-white">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
-                <span className="h-2 w-2 rounded-full bg-purple-400" />
-                TBTI
-              </div>
               <h1 className="heading-font mt-6 text-4xl font-bold leading-tight">
-                True Bread Theological Institute
+                True Bread Training Institute
               </h1>
               <p className="mt-4 max-w-md text-white/80">
                 Learn the Word. Live the Word. Serve with humility.
@@ -60,12 +57,21 @@ const TbtiAuthLayout = ({ title, subtitle, children }) => {
                 Back to church site
               </Link>
 
-              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
-                TBTI Portal
-              </p>
-              <h2 className="heading-font mt-2 text-3xl font-bold text-gray-900">
-                {title}
-              </h2>
+              <div className="mt-6 flex items-center gap-3">
+                <img
+                  src={tbtiLogo}
+                  alt="True Bread Training Institute logo"
+                  className="h-10 w-10 rounded-full object-contain"
+                />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
+                    TBTI Portal
+                  </p>
+                  <h2 className="heading-font mt-1 text-3xl font-bold text-[#2B2B2B]">
+                    {title}
+                  </h2>
+                </div>
+              </div>
               {subtitle ? (
                 <p className="mt-2 text-sm text-gray-600">{subtitle}</p>
               ) : null}

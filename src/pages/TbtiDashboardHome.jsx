@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const TbtiDashboardHome = () => {
   return (
     <div className="max-w-3xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
         Welcome
       </p>
       <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">

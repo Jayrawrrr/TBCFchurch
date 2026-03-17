@@ -28,7 +28,7 @@ const TbtiForgot = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="you@example.com"
           />
         </div>
@@ -41,7 +41,7 @@ const TbtiForgot = () => {
         </button>
 
         <p className="pt-2 text-center text-sm text-gray-600">
-          <Link to="/tbti/login" className="font-semibold text-purple-700 hover:underline">
+          <Link to="/tbti/login" className="font-semibold text-[#451515] hover:underline">
             Back to login
           </Link>
         </p>

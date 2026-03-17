@@ -134,7 +134,7 @@ const TbtiSignup = () => {
             type="text"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="Your full name"
           />
         </div>
@@ -147,7 +147,7 @@ const TbtiSignup = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
               placeholder="you@example.com"
             />
           </div>
@@ -160,7 +160,7 @@ const TbtiSignup = () => {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
               placeholder="+1 234 567 8900"
             />
           </div>
@@ -173,7 +173,7 @@ const TbtiSignup = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="••••••••"
           />
         </div>
@@ -186,7 +186,7 @@ const TbtiSignup = () => {
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#451515]"
             placeholder="Repeat password"
           />
         </div>
@@ -201,7 +201,7 @@ const TbtiSignup = () => {
 
         <p className="pt-2 text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <Link to="/tbti/login" className="font-semibold text-purple-700 hover:underline">
+          <Link to="/tbti/login" className="font-semibold text-[#451515] hover:underline">
             Log in
           </Link>
         </p>

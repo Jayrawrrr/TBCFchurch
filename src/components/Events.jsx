@@ -81,7 +81,7 @@ const Events = () => {
     <section id="events" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
             What's On
           </p>
           <h2 className="heading-font mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -106,7 +106,7 @@ const Events = () => {
                 className="rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-shadow hover:shadow-lg card-hover"
               >
                 <div className="mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
                     {event.date}
                   </p>
                   <h3 className="heading-font mt-2 text-xl font-bold text-gray-900">
@@ -118,7 +118,7 @@ const Events = () => {
                   <button
                     type="button"
                     onClick={() => setActiveEvent(event)}
-                    className="text-sm font-semibold text-purple-700 hover:underline"
+                    className="text-sm font-semibold text-[#29226D] hover:underline"
                   >
                     Learn More →
                   </button>
@@ -133,7 +133,7 @@ const Events = () => {
           <div className="max-w-lg w-full rounded-2xl bg-white p-6 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
                   {activeEvent.date}
                 </p>
                 <h3 className="heading-font mt-2 text-xl font-bold text-gray-900">

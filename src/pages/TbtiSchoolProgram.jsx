@@ -4,7 +4,7 @@ const TbtiSchoolProgram = () => {
   return (
     <div className="max-w-3xl space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
           Section 2
         </p>
         <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">
@@ -72,7 +72,7 @@ const TbtiSchoolProgram = () => {
         <h2 className="heading-font text-xl font-bold text-gray-900">2.5 Curriculum Overview</h2>
         <div className="mt-4 space-y-6">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-purple-600">Year 1 – Certificate in Biblical Foundations</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#451515]">Year 1 – Certificate in Biblical Foundations</h3>
             <p className="mt-1 text-sm text-gray-600">Focus: Foundational Christian doctrine and Scripture</p>
             <ul className="mt-2 space-y-1 text-sm text-gray-600">
               <li><strong>Semester 1:</strong> Bibliology, Soteriology, Identity in Christ, Book of Genesis, Bible Survey</li>
@@ -82,7 +82,7 @@ const TbtiSchoolProgram = () => {
             <p className="mt-2 text-sm font-medium text-gray-700">Credential Awarded: Certificate in Biblical Foundations</p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-purple-600">Year 2 – Diploma in Biblical Studies</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#451515]">Year 2 – Diploma in Biblical Studies</h3>
             <p className="mt-1 text-sm text-gray-600">Focus: Christology, Ministry, Theology, and Church</p>
             <ul className="mt-2 space-y-1 text-sm text-gray-600">
               <li><strong>Semester 1:</strong> Christology I, Book of Hebrews, Homiletics I & II, The Great Commission</li>
@@ -92,7 +92,7 @@ const TbtiSchoolProgram = () => {
             <p className="mt-2 text-sm font-medium text-gray-700">Credential Awarded: Diploma in Biblical Studies</p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-purple-600">Year 3 – Advanced Diploma in Theology and Ministry</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#451515]">Year 3 – Advanced Diploma in Theology and Ministry</h3>
             <p className="mt-1 text-sm text-gray-600">Focus: Theology, Interpretation, Leadership, and Eschatology</p>
             <ul className="mt-2 space-y-1 text-sm text-gray-600">
               <li><strong>Semester 1:</strong> Ecclesiology II, Angelology, Book of Romans, Book of 1 Peter, The Kingdom of God I</li>

@@ -26,7 +26,7 @@ const TbtiLessons = () => {
   if (!isEnrolled) {
     return (
       <div className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
           Lessons
         </p>
         <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">
@@ -46,7 +46,7 @@ const TbtiLessons = () => {
   return (
     <div className="max-w-4xl space-y-8">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#451515]">
           Lessons
         </p>
         <h1 className="heading-font mt-2 text-3xl font-bold text-gray-900">
@@ -69,7 +69,7 @@ const TbtiLessons = () => {
               className="rounded-xl border border-gray-100 bg-white p-6 shadow-md"
             >
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold uppercase tracking-wider text-purple-600">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#451515]">
                   Year {lesson.year ?? 1} · Semester {lesson.semester ?? 1}
                 </span>
               </div>
@@ -83,7 +83,7 @@ const TbtiLessons = () => {
                     href={lesson.pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-lg bg-purple-600 px-3 py-2 text-sm font-medium text-white hover:bg-purple-700"
+                    className="inline-flex items-center rounded-lg bg-[#451515] px-3 py-2 text-sm font-medium text-white hover:bg-[#6B2425]"
                   >
                     PDF handout
                   </a>

@@ -27,8 +27,8 @@ const Navbar = () => {
   }
 
   const linkBaseClasses = scrolled
-    ? 'text-gray-800 hover:text-purple-600'
-    : 'text-white hover:text-purple-200'
+    ? 'text-gray-800 hover:text-[#29226D]'
+    : 'text-white hover:text-[#D4AA15]'
 
   return (
     <nav
@@ -86,8 +86,8 @@ const Navbar = () => {
               to="/tbti/login"
               className={`rounded-full px-5 py-2 text-sm font-semibold shadow-md transition ml-4 ${
                 scrolled
-                  ? 'bg-purple-600 text-white hover:bg-purple-700'
-                  : 'bg-white text-purple-700 hover:bg-purple-100'
+                  ? 'bg-[#D4AA15] text-[#29226D] hover:bg-[#b8920f]'
+                  : 'bg-white text-[#29226D] hover:bg-[#F6F4E8]'
               }`}
             >
               TBTI Login
@@ -98,7 +98,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden absolute right-0 ${
-              scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white hover:text-purple-200'
+              scrolled ? 'text-gray-700 hover:text-[#29226D]' : 'text-white hover:text-[#D4AA15]'
             }`}
           >
             <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
@@ -109,30 +109,30 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-white border-t transition-all`}>
         <div className="px-4 py-4 space-y-4">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             Home
           </a>
-          <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             About
           </a>
-          <a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             Services
           </a>
-          <a href="#bible-school" onClick={(e) => handleNavClick(e, '#bible-school')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#bible-school" onClick={(e) => handleNavClick(e, '#bible-school')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             Bible School
           </a>
-          <a href="#events" onClick={(e) => handleNavClick(e, '#events')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#events" onClick={(e) => handleNavClick(e, '#events')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             Events
           </a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="block text-gray-700 hover:text-purple-600 transition-colors font-medium py-2">
+          <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="block text-gray-700 hover:text-[#29226D] transition-colors font-medium py-2">
             Contact
           </a>
           <Link
             to="/tbti/login"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-2 block w-full rounded-lg bg-purple-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-md transition hover:bg-purple-700"
+            className="mt-2 block w-full rounded-lg bg-[#D4AA15] px-4 py-2 text-center text-sm font-semibold text-[#29226D] shadow-md transition hover:bg-[#b8920f]"
           >
-            Bible School Login / Sign up
+            TBTI LOGIN
           </Link>
         </div>
       </div>

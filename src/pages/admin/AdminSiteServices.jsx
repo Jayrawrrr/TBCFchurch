@@ -9,7 +9,7 @@ const defaultServices = [
     time: '9:00 AM - 10:30 AM',
     location: 'Main Sanctuary',
     day: 'Sunday',
-    color: 'purple',
+    color: 'gold',
   },
   {
     title: 'Sunday Evening',
@@ -35,7 +35,7 @@ const emptyService = {
   time: '',
   location: '',
   day: '',
-  color: 'purple',
+  color: 'gold',
 }
 
 const AdminSiteServices = () => {
@@ -146,14 +146,14 @@ const AdminSiteServices = () => {
                 className="w-full text-left"
               >
                 <div className="relative max-w-4xl mx-auto">
-                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-200" />
+                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#F6F4E8]" />
                   <div className="relative flex items-center">
                     <div className="absolute left-8 z-10">
-                      <div className="w-4 h-4 rounded-full bg-purple-600 border-4 border-white shadow-lg" />
+                      <div className="w-4 h-4 rounded-full bg-[#D4AA15] border-4 border-white shadow-lg" />
                     </div>
                     <div className="w-full ml-16">
                       <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
-                        <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-purple-600 mb-4">
+                        <div className="inline-flex items-center gap-2 rounded-full bg-[#F6F4E8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15] mb-4">
                           {item.day || 'Day'}
                         </div>
                         <h3 className="heading-font mb-4 text-xl font-bold text-gray-900">
@@ -164,17 +164,17 @@ const AdminSiteServices = () => {
                         </p>
                         <div className="space-y-2 pt-4 border-top border-gray-100">
                           <div className="flex items-center text-sm text-gray-700">
-                            <i className="far fa-clock mr-3 text-purple-600"></i>
+                            <i className="far fa-clock mr-3 text-[#D4AA15]"></i>
                             <span className="font-medium">
                               {item.time || 'Time'}
                             </span>
                           </div>
                           <div className="flex items-center text-sm text-gray-600">
-                            <i className="fas fa-map-marker-alt mr-3 text-purple-600"></i>
+                            <i className="fas fa-map-marker-alt mr-3 text-[#D4AA15]"></i>
                             <span>{item.location || 'Location'}</span>
                           </div>
                         </div>
-                        <p className="mt-3 text-xs font-semibold text-purple-700">
+                        <p className="mt-3 text-xs font-semibold text-[#29226D]">
                           Click to edit →
                         </p>
                       </div>
@@ -269,7 +269,7 @@ const AdminSiteServices = () => {
                       onChange={(e) => setDraft((d) => ({ ...d, color: e.target.value }))}
                       className="w-full rounded-xl border border-gray-300 px-3 py-2 text-sm"
                     >
-                      <option value="purple">Purple</option>
+                      <option value="gold">Gold</option>
                       <option value="indigo">Indigo</option>
                       <option value="blue">Blue</option>
                     </select>

@@ -47,7 +47,7 @@ const Hero = () => {
       {/* Centered content - TBTI design language */}
       <div className="relative z-10 max-w-4xl px-4 text-center text-white">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
-          <span className="h-2 w-2 rounded-full bg-purple-400" />
+          <span className="h-2 w-2 rounded-full bg-[#D4AA15]" />
           True Bread Christian Fellowship
         </div>
         <h1 className="heading-font mt-2 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">

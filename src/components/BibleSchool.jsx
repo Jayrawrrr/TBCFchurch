@@ -40,7 +40,7 @@ const BibleSchool = () => {
     <section id="bible-school" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
             True Bread Training Institute
           </p>
           <h2 className="heading-font mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -127,7 +127,7 @@ const BibleSchool = () => {
         {/* School Program - from handout 2.1 & 2.2 */}
         <div className="rounded-xl border border-gray-200 bg-neutral-900 p-8 md:p-12 text-white mb-16 shadow-lg">
           <div className="text-center mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
               School Program
             </p>
             <h3 className="heading-font mt-2 text-3xl font-bold text-white">
@@ -169,7 +169,7 @@ const BibleSchool = () => {
 
         {/* Call to Action - TBTI buttons */}
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AA15]">
             Get Started
           </p>
           <h3 className="heading-font mt-2 text-3xl font-bold text-gray-900">
@@ -188,7 +188,7 @@ const BibleSchool = () => {
             </Link>
             <Link
               to="/tbti/signup"
-              className="rounded-xl border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-purple-700 transition hover:bg-gray-50 text-center"
+              className="rounded-xl border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-[#29226D] transition hover:bg-gray-50 text-center"
             >
               Create TBTI Account
             </Link>
