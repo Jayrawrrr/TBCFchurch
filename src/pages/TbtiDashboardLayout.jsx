@@ -18,7 +18,9 @@ const TbtiDashboardLayout = () => {
     { to: '/tbti/dashboard/school-program', label: 'School Program', icon: 'fa-graduation-cap' },
     { to: '/tbti/dashboard/admission', label: 'Registration & Admission', icon: 'fa-file-alt' },
     { to: '/tbti/dashboard/discipline', label: 'School Discipline', icon: 'fa-book' },
-    { to: '/tbti/dashboard/lessons', label: 'Lessons (Enrolled)', icon: 'fa-book-open' },
+    { to: '/tbti/dashboard/lessons', label: 'Lessons (Enrolled)', icon: 'fa-book-open', requiresEnrollment: true },
+    { to: '/tbti/dashboard/assignments', label: 'Assignments', icon: 'fa-tasks', requiresEnrollment: true },
+    { to: '/tbti/dashboard/devotion', label: 'Devotion Tracker', icon: 'fa-heart', requiresEnrollment: true },
     { to: '/tbti/dashboard/profile', label: 'Profile', icon: 'fa-user' },
   ]
 
@@ -41,14 +43,16 @@ const TbtiDashboardLayout = () => {
           <span className="h-2 w-2 rounded-full bg-[#451515]" />
           <span className="heading-font text-lg font-bold">TBTI Portal</span>
         </Link>
-        {(role === 'admin' || role === 'superadmin') && (
-          <Link
-            to="/admin"
-            className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:underline"
-          >
-            Admin
-          </Link>
-        )}
+        <div className="flex items-center gap-3">
+          {(role === 'admin' || role === 'superadmin') && (
+            <Link
+              to="/admin"
+              className="text-sm font-medium text-gray-600 hover:text-[#451515] hover:underline"
+            >
+              Admin
+            </Link>
+          )}
+        </div>
       </header>
 
       <div className="flex">
@@ -59,8 +63,8 @@ const TbtiDashboardLayout = () => {
           }`}
         >
           <nav className="flex flex-col gap-1 p-4">
-            {navItems.map(({ to, label, icon }) => {
-              const isLessons = to === '/tbti/dashboard/lessons'
+            {navItems.map(({ to, label, icon, requiresEnrollment }) => {
+              const isLocked = requiresEnrollment && !isEnrolled
               return (
                 <NavLink
                   key={to}
@@ -70,7 +74,7 @@ const TbtiDashboardLayout = () => {
                   className={({ isActive }) => {
                     const base =
                       'flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors'
-                    if (isLessons && !isEnrolled) {
+                    if (isLocked) {
                       return `${base} text-gray-400 cursor-pointer ${
                         isActive ? 'bg-gray-50' : 'hover:bg-gray-50'
                       }`
@@ -82,7 +86,7 @@ const TbtiDashboardLayout = () => {
                 >
                   <i className={`fas ${icon} w-5 text-center`} />
                   <span className="flex-1">{label}</span>
-                  {isLessons && !isEnrolled && (
+                  {isLocked && (
                     <i className="fas fa-lock text-xs text-gray-400" aria-hidden="true" />
                   )}
                 </NavLink>

@@ -14,10 +14,13 @@ import TbtiAdmission from './pages/TbtiAdmission'
 import TbtiDiscipline from './pages/TbtiDiscipline'
 import TbtiProfile from './pages/TbtiProfile'
 import TbtiLessons from './pages/TbtiLessons'
+import TbtiAssignments from './pages/TbtiAssignments'
+import TbtiDevotion from './pages/TbtiDevotion'
 import AdminLayout from './pages/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminStudents from './pages/admin/AdminStudents'
 import AdminLessons from './pages/admin/AdminLessons'
+import AdminAssignments from './pages/admin/AdminAssignments'
 import AdminSiteServices from './pages/admin/AdminSiteServices'
 import AdminSiteEvents from './pages/admin/AdminSiteEvents'
 
@@ -35,12 +38,15 @@ function App() {
         <Route path="admission" element={<TbtiAdmission />} />
         <Route path="discipline" element={<TbtiDiscipline />} />
         <Route path="lessons" element={<TbtiLessons />} />
+        <Route path="assignments" element={<TbtiAssignments />} />
+        <Route path="devotion" element={<TbtiDevotion />} />
         <Route path="profile" element={<TbtiProfile />} />
       </Route>
       <Route path="/admin" element={<AdminProtectedRoute><AdminLayout /></AdminProtectedRoute>}>
         <Route index element={<AdminDashboard />} />
         <Route path="students" element={<AdminStudents />} />
         <Route path="lessons" element={<AdminLessons />} />
+        <Route path="assignments" element={<AdminAssignments />} />
         <Route path="site-services" element={<AdminSiteServices />} />
         <Route path="site-events" element={<AdminSiteEvents />} />
       </Route>

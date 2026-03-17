@@ -11,6 +11,7 @@ const AdminLayout = () => {
     { to: '/admin', label: 'Admin Home', icon: 'fa-home' },
     { to: '/admin/students', label: 'Students', icon: 'fa-users' },
     { to: '/admin/lessons', label: 'Lessons', icon: 'fa-book-open' },
+    { to: '/admin/assignments', label: 'Assignments', icon: 'fa-tasks' },
     { to: '/admin/site-services', label: 'Site · Services', icon: 'fa-clock' },
     { to: '/admin/site-events', label: 'Site · Events', icon: 'fa-calendar' },
   ]
